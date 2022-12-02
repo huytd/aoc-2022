@@ -36,7 +36,7 @@ $ make
 			<td align="center"> </td>
 			<td align="center"> </td>
 			<td align="center"><a href="/day01">1</a></td>
-			<td align="center">2</td>
+			<td align="center"><a href="/day02">2</a></td>
 			<td align="center">3</td>
 			<td align="center">4</td>
 		</tr>
