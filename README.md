@@ -37,11 +37,11 @@ $ make
 			<td align="center"> </td>
 			<td align="center"><a href="/day01">1</a></td>
 			<td align="center"><a href="/day02">2</a></td>
-			<td align="center">3</td>
-			<td align="center">4</td>
+			<td align="center"><a href="/day03">3</a></td>
+			<td align="center"><a href="/day04">4</a></td>
 		</tr>
 		<tr>
-			<td align="center">5</td>
+			<td align="center"><a href="/day05">5</a></td>
 			<td align="center">6</td>
 			<td align="center">7</td>
 			<td align="center">8</td>
