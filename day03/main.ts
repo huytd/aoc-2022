@@ -35,8 +35,8 @@ const Part1 = async () => {
 };
 
 const Part2 = async () => {
-	let inputs = [];
-	let group = [];
+	const inputs = [];
+	let group: string[] = [];
 	for await (const line of readLines(reader)) {
 		if (group.length < 3) {
 			group.push(line);
@@ -48,7 +48,7 @@ const Part2 = async () => {
 	if (group.length) inputs.push(group);
 
 	let sum = 0;
-	for (let group of inputs) {
+	for (const group of inputs) {
 		const chars = overlappedCharacters(group);
 		sum += chars.map(c => getPriority(c)).reduce((total, n) => total + n, 0);
 	}
