@@ -95,7 +95,7 @@ pub fn part2() !void {
 
     var iter = std.mem.tokenize(u8, content, "\n");
     var lines = std.ArrayList([]const u8).init(allocator);
-
+    defer lines.deinit();
     while (iter.next()) |line| {
         try lines.append(line);
     }
@@ -115,5 +115,6 @@ pub fn part2() !void {
 }
 
 pub fn main() !void {
+    try part1();
     try part2();
 }
