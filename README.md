@@ -43,7 +43,7 @@ $ make
 		<tr>
 			<td align="center"><a href="/day05">5</a></td>
 			<td align="center"><a href="/day06">6</a></td>
-			<td align="center">7</td>
+			<td align="center"><a href="/day07">7</a></td>
 			<td align="center">8</td>
 			<td align="center">9</td>
 			<td align="center">10</td>
