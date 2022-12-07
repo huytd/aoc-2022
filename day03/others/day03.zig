@@ -43,8 +43,8 @@ pub fn overlappedChars(s1: []const u8, s2: []const u8) [CHAR_COUNT]usize {
 }
 
 pub fn overlappedCharsMultipleStrings(comptime size: usize, strings: [size][]const u8) [CHAR_COUNT]usize {
-    var chars: [CHAR_COUNT]usize = [_]usize{0} ** CHAR_COUNT;
-    var freqs: [size][CHAR_COUNT]usize = [_][CHAR_COUNT]usize{[_]usize{0} ** CHAR_COUNT} ** size;
+    var chars: [CHAR_COUNT]usize = .{0} ** CHAR_COUNT;
+    var freqs: [size][CHAR_COUNT]usize = .{.{0} ** CHAR_COUNT} ** size;
     for (strings) |string, i| {
         for (string) |c| {
             freqs[i][charCode(c)] += 1;
@@ -79,7 +79,7 @@ pub fn part1() !void {
     var sum: usize = 0;
     while (lines.next()) |line| {
         const mid = line.len / 2;
-        const chars = overlappedCharsMultipleStrings(2, [2][]const u8{ line[0..mid], line[mid..] });
+        const chars = overlappedCharsMultipleStrings(2, .{ line[0..mid], line[mid..] });
         for (chars) |count, c| {
             if (count > 0) {
                 sum += c + 1;
@@ -104,7 +104,7 @@ pub fn part2() !void {
 
     var i: usize = 0;
     while (i < lines.items.len) : (i += 3) {
-        const chars = overlappedCharsMultipleStrings(3, [3][]const u8{ lines.items[i], lines.items[i + 1], lines.items[i + 2] });
+        const chars = overlappedCharsMultipleStrings(3, .{ lines.items[i], lines.items[i + 1], lines.items[i + 2] });
         for (chars) |count, c| {
             if (count > 0) {
                 sum += c + 1;
