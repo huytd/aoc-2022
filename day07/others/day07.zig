@@ -44,9 +44,8 @@ pub fn startsWith(haystack: []const u8, needle: []const u8) bool {
 }
 
 pub fn main() !void {
-    var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);
-    defer arena.deinit();
-    const allocator = arena.allocator();
+    var gpa = std.heap.GeneralPurposeAllocator(.{}){};
+    var allocator = gpa.allocator();
 
     const content = try readInputFile(allocator);
     var lines = std.ArrayList([]const u8).init(allocator);
@@ -64,11 +63,19 @@ pub fn main() !void {
 
     while (i < lines.items.len) {
         var currentLine = lines.items[i];
+        i += 1;
+        print("{s}\n", .{currentLine});
         if (startsWith(currentLine, "$ cd ")) {
             const targetFolder = currentLine[5..];
-            var dir = dirMap.get(targetFolder);
-            if (dir != null) {
-                head = dir.?;
+            if (std.mem.eql(u8, targetFolder, "..")) {
+                if (head.parent != null) {
+                    head = head.parent.?;
+                }
+            } else {
+                var dir = dirMap.get(targetFolder);
+                if (dir != null) {
+                    head = dir.?;
+                }
             }
             i += 1;
         } else if (startsWith(currentLine, "$ ls")) {
@@ -76,6 +83,7 @@ pub fn main() !void {
             while (i < lines.items.len and !startsWith(lines.items[i], "$")) {
                 currentLine = lines.items[i];
                 if (!startsWith(currentLine, "dir")) {
+                    print("READ FILE LINE", .{});
                     var iter = std.mem.tokenize(u8, currentLine, " ");
                     const sizeStr = iter.next().?;
                     const nameStr = iter.next().?;
