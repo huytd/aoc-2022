@@ -1,0 +1,10 @@
+{
+  "crates": [
+    {
+      "root_module": "main.rs",
+      "edition": "2021",
+      "deps": []
+    }
+  ],
+  "sysroot_src": "/home/codespace/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library"
+}
