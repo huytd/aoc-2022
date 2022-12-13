@@ -47,10 +47,10 @@ $ make
 			<td align="center"><a href="/day08">8</a></td>
 			<td align="center"><a href="/day09">9</a></td>
 			<td align="center"><a href="/day10">10</a></td>
-			<td align="center">11</td>
+			<td align="center"><a href="/day11">11</a></td>
 		</tr>
 		<tr>
-			<td align="center">12</td>
+			<td align="center"><a href="/day12">12</a></td>
 			<td align="center">13</td>
 			<td align="center">14</td>
 			<td align="center">15</td>
