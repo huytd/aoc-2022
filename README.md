@@ -51,7 +51,7 @@ $ make
 		</tr>
 		<tr>
 			<td align="center"><a href="/day12">12</a></td>
-			<td align="center">13</td>
+			<td align="center"><a href="/day13">13</a></td>
 			<td align="center">14</td>
 			<td align="center">15</td>
 			<td align="center">16</td>
